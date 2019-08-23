@@ -197,32 +197,32 @@
             <div class="section">
               
                 <h1 id="using-facade-method">Using Facade Method</h1>
-<p>Query execution is a complex process involving multiple steps, including query <strong>parsing</strong>, 
+<p>Query execution is a complex process involving multiple steps, including query <strong>parsing</strong>,
 <strong>validating</strong> and finally <strong>executing</strong> against your <a href="../type-system/schema/">schema</a>.</p>
-<p><strong>graphql-php</strong> provides a convenient facade for this process in class 
+<p><strong>graphql-php</strong> provides a convenient facade for this process in class
 <a href="../reference/#graphqlgraphql"><code>GraphQL\GraphQL</code></a>:</p>
 <pre><code class="php">&lt;?php
 use GraphQL\GraphQL;
 
 $result = GraphQL::executeQuery(
-    $schema, 
-    $queryString, 
-    $rootValue = null, 
-    $context = null, 
-    $variableValues = null, 
+    $schema,
+    $queryString,
+    $rootValue = null,
+    $context = null,
+    $variableValues = null,
     $operationName = null,
     $fieldResolver = null,
     $validationRules = null
 );
 </code></pre>
 
-<p>It returns an instance of <a href="../reference/#graphqlexecutorexecutionresult"><code>GraphQL\Executor\ExecutionResult</code></a> 
+<p>It returns an instance of <a href="../reference/#graphqlexecutorexecutionresult"><code>GraphQL\Executor\ExecutionResult</code></a>
 which can be easily converted to array:</p>
 <pre><code class="php">$serializableResult = $result-&gt;toArray();
 </code></pre>
 
-<p>Returned array contains <strong>data</strong> and <strong>errors</strong> keys, as described by the 
-<a href="http://facebook.github.io/graphql/#sec-Response-Format">GraphQL spec</a>. 
+<p>Returned array contains <strong>data</strong> and <strong>errors</strong> keys, as described by the
+<a href="http://facebook.github.io/graphql/#sec-Response-Format">GraphQL spec</a>.
 This array is suitable for further serialization (e.g. using <strong>json_encode</strong>).
 See also the section on <a href="../error-handling/">error handling and formatting</a>.</p>
 <p>Description of <strong>executeQuery</strong> method arguments:</p>
@@ -258,7 +258,7 @@ See also the section on <a href="../error-handling/">error handling and formatti
 <tr>
 <td>variableValues</td>
 <td><code>array</code></td>
-<td>Map of variable values passed along with query string. See section on <a href="http://graphql.org/learn/queries/#variables">query variables on official GraphQL website</a></td>
+<td>Map of variable values passed along with query string. See section on <a href="http://graphql.org/learn/queries/#variables">query variables on official GraphQL website</a>. Note that while variableValues must be an associative array, the values inside it can be nested using \stdClass if desired.</td>
 </tr>
 <tr>
 <td>operationName</td>
@@ -278,8 +278,8 @@ See also the section on <a href="../error-handling/">error handling and formatti
 </tbody>
 </table>
 <h1 id="using-server">Using Server</h1>
-<p>If you are building HTTP GraphQL API, you may prefer our Standard Server 
-(compatible with <a href="https://github.com/graphql/express-graphql">express-graphql</a>). 
+<p>If you are building HTTP GraphQL API, you may prefer our Standard Server
+(compatible with <a href="https://github.com/graphql/express-graphql">express-graphql</a>).
 It supports more features out of the box, including parsing HTTP requests, producing a spec-compliant response; <a href="#query-batching">batched queries</a>; persisted queries.</p>
 <p>Usage example (with plain PHP):</p>
 <pre><code class="php">&lt;?php
@@ -386,7 +386,7 @@ $psrResponse = new SomePsr7ResponseImplementation(json_encode($result));
 </tbody>
 </table>
 <p><strong>Server config instance</strong></p>
-<p>If you prefer fluid interface for config with autocomplete in IDE and static time validation, 
+<p>If you prefer fluid interface for config with autocomplete in IDE and static time validation,
 use <a href="../reference/#graphqlserverserverconfig"><code>GraphQL\Server\ServerConfig</code></a> instead of an array:</p>
 <pre><code class="php">&lt;?php
 use GraphQL\Server\ServerConfig;
@@ -403,7 +403,7 @@ $server = new StandardServer($config);
 
 <h2 id="query-batching">Query batching</h2>
 <p>Standard Server supports query batching (<a href="https://dev-blog.apollodata.com/query-batching-in-apollo-63acfd859862">apollo-style</a>).</p>
-<p>One of the major benefits of Server over a sequence of <strong>executeQuery()</strong> calls is that 
+<p>One of the major benefits of Server over a sequence of <strong>executeQuery()</strong> calls is that
 <a href="../data-fetching/#solving-n1-problem">Deferred resolvers</a> won't be isolated in queries.
 So for example following batch will require single DB request (if user field is deferred):</p>
 <pre><code class="json">[
@@ -454,11 +454,11 @@ $myValiationRules = array_merge(
 );
 
 $result = GraphQL::executeQuery(
-    $schema, 
-    $queryString, 
-    $rootValue = null, 
-    $context = null, 
-    $variableValues = null, 
+    $schema,
+    $queryString,
+    $rootValue = null,
+    $context = null,
+    $variableValues = null,
     $operationName = null,
     $fieldResolver = null,
     $myValiationRules // &lt;-- this will override global validation rules for this request
@@ -466,7 +466,7 @@ $result = GraphQL::executeQuery(
 </code></pre>
 
 <p>Or with a standard server:</p>
-<pre><code class="php">&lt;?php 
+<pre><code class="php">&lt;?php
 use GraphQL\Server\StandardServer;
 
 $server = new StandardServer([
