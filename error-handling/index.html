@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Handling Errors - graphql-php</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
@@ -24,7 +25,7 @@
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -35,6 +36,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href=".." class="icon icon-home"> graphql-php</a>
         <div role="search">
@@ -45,126 +47,71 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="..">About</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../getting-started/">Getting Started</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../complementary-tools/">Complementary Tools</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Type Definitions</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../type-system/">Introduction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../type-system/object-types/">Object Types</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../type-system/scalar-types/">Scalar Types</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../type-system/enum-types/">Enumeration Types</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../type-system/lists-and-nonnulls/">Lists and Non-Null</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../type-system/interfaces/">Interfaces</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../type-system/unions/">Unions</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../type-system/input-types/">Mutations and Input Types</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../type-system/directives/">Directives</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../type-system/schema/">Schema</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../type-system/type-language/">Using Type Language</a>
-                </li>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">About</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../complementary-tools/">Complementary Tools</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Type Definitions</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../type-system/">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../type-system/object-types/">Object Types</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../type-system/scalar-types/">Scalar Types</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../type-system/enum-types/">Enumeration Types</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../type-system/lists-and-nonnulls/">Lists and Non-Null</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../type-system/interfaces/">Interfaces</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../type-system/unions/">Unions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../type-system/input-types/">Mutations and Input Types</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../type-system/directives/">Directives</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../type-system/schema/">Schema</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../type-system/type-language/">Using Type Language</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../executing-queries/">Executing Queries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../data-fetching/">Fetching Data</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Handling Errors</a>
+    <ul class="current">
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../executing-queries/">Executing Queries</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../data-fetching/">Fetching Data</a>
-	    </li>
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">Handling Errors</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#errors-in-graphql">Errors in GraphQL</a></li>
-    
-
-    <li class="toctree-l2"><a href="#default-error-formatting">Default Error formatting</a></li>
-    
-
-    <li class="toctree-l2"><a href="#debugging-tools">Debugging tools</a></li>
-    
-
-    <li class="toctree-l2"><a href="#custom-error-handling-and-formatting">Custom Error Handling and Formatting</a></li>
-    
-
-    <li class="toctree-l2"><a href="#schema-errors">Schema Errors</a></li>
-    
-
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../security/">Security</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../how-it-works/">How it works</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../reference/">Class Reference</a>
-	    </li>
-          
-        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../security/">Security</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../how-it-works/">How it works</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../reference/">Class Reference</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -189,6 +136,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -207,7 +155,9 @@ for your specific requirements.</p>
 <pre><code class="php">&lt;?php
 [
     'message' =&gt; 'Error message',
-    'category' =&gt; 'graphql',
+    'extensions' =&gt; [
+        'category' =&gt; 'graphql'
+    ],
     'locations' =&gt; [
         ['line' =&gt; 1, 'column' =&gt; 2]
     ],
@@ -252,7 +202,9 @@ class MySafeException extends \Exception implements ClientAware
 <pre><code class="php">&lt;?php
 [
     'message' =&gt; 'My reported error',
-    'category' =&gt; 'businessLogic',
+    'extensions' =&gt; [
+        'category' =&gt; 'businessLogic'
+    ],
     'locations' =&gt; [
         ['line' =&gt; 10, 'column' =&gt; 2]
     ],
@@ -269,10 +221,10 @@ class MySafeException extends \Exception implements ClientAware
 </code></pre>
 
 <h1 id="debugging-tools">Debugging tools</h1>
-<p>During development or debugging use <code>$result-&gt;toArray(true)</code> to add <strong>debugMessage</strong> key to 
+<p>During development or debugging use <code>$result-&gt;toArray(DebugFlag::INCLUDE_DEBUG_MESSAGE)</code> to add <strong>debugMessage</strong> key to 
 each formatted error entry. If you also want to add exception trace - pass flags instead:</p>
-<pre><code>use GraphQL\Error\Debug;
-$debug = Debug::INCLUDE_DEBUG_MESSAGE | Debug::INCLUDE_TRACE;
+<pre><code class="php">use GraphQL\Error\DebugFlag;
+$debug = DebugFlag::INCLUDE_DEBUG_MESSAGE | DebugFlag::INCLUDE_TRACE;
 $result = GraphQL::executeQuery(/*args*/)-&gt;toArray($debug);
 </code></pre>
 
@@ -281,7 +233,9 @@ $result = GraphQL::executeQuery(/*args*/)-&gt;toArray($debug);
 [
     'debugMessage' =&gt; 'Actual exception message',
     'message' =&gt; 'Internal server error',
-    'category' =&gt; 'internal',
+    'extensions' =&gt; [
+        'category' =&gt; 'internal'
+    ],
     'locations' =&gt; [
         ['line' =&gt; 10, 'column' =&gt; 2]
     ],
@@ -299,8 +253,8 @@ $result = GraphQL::executeQuery(/*args*/)-&gt;toArray($debug);
 <p>If you prefer the first resolver exception to be re-thrown, use following flags:</p>
 <pre><code class="php">&lt;?php
 use GraphQL\GraphQL;
-use GraphQL\Error\Debug;
-$debug = Debug::INCLUDE_DEBUG_MESSAGE | Debug::RETHROW_INTERNAL_EXCEPTIONS;
+use GraphQL\Error\DebugFlag;
+$debug = DebugFlag::INCLUDE_DEBUG_MESSAGE | DebugFlag::RETHROW_INTERNAL_EXCEPTIONS;
 
 // Following will throw if there was an exception in resolver during execution:
 $result = GraphQL::executeQuery(/*args*/)-&gt;toArray($debug); 
@@ -383,7 +337,7 @@ echo json_encode($body);
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -393,7 +347,7 @@ echo json_encode($body);
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -407,6 +361,11 @@ echo json_encode($body);
     <script>var base_url = '..';</script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

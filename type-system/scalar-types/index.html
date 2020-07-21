@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="../../img/favicon.ico">
   <title>Scalar Types - graphql-php</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
@@ -24,7 +25,7 @@
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -35,6 +36,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../.." class="icon icon-home"> graphql-php</a>
         <div role="search">
@@ -45,117 +47,71 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../..">About</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../getting-started/">Getting Started</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../complementary-tools/">Complementary Tools</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Type Definitions</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../">Introduction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../object-types/">Object Types</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">Scalar Types</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#built-in-scalar-types">Built-in Scalar Types</a></li>
-    
-
-    <li class="toctree-l3"><a href="#writing-custom-scalar-types">Writing Custom Scalar Types</a></li>
-    
-
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">About</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../getting-started/">Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../complementary-tools/">Complementary Tools</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Type Definitions</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../">Introduction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../object-types/">Object Types</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Scalar Types</a>
+    <ul class="current">
     </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../enum-types/">Enumeration Types</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../lists-and-nonnulls/">Lists and Non-Null</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../interfaces/">Interfaces</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../unions/">Unions</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../input-types/">Mutations and Input Types</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../directives/">Directives</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../schema/">Schema</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../type-language/">Using Type Language</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../executing-queries/">Executing Queries</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../data-fetching/">Fetching Data</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../error-handling/">Handling Errors</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../security/">Security</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../how-it-works/">How it works</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../reference/">Class Reference</a>
-	    </li>
-          
-        </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../enum-types/">Enumeration Types</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../lists-and-nonnulls/">Lists and Non-Null</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../interfaces/">Interfaces</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../unions/">Unions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../input-types/">Mutations and Input Types</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../directives/">Directives</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../schema/">Schema</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../type-language/">Using Type Language</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../executing-queries/">Executing Queries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../data-fetching/">Fetching Data</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../error-handling/">Handling Errors</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../security/">Security</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../how-it-works/">How it works</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../reference/">Class Reference</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -184,6 +140,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -289,7 +246,7 @@ class EmailType extends ScalarType
      * @return string
      * @throws Error
      */
-    public function parseLiteral($valueNode, array $variables = null)
+    public function parseLiteral(Node $valueNode, ?array $variables = null)
     {
         // Note: throwing GraphQL\Error\Error vs \UnexpectedValueException to benefit from GraphQL
         // error location in query:
@@ -337,7 +294,7 @@ $emailType = new CustomScalarType([
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -347,7 +304,7 @@ $emailType = new CustomScalarType([
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -361,6 +318,11 @@ $emailType = new CustomScalarType([
     <script>var base_url = '../..';</script>
     <script src="../../js/theme.js" defer></script>
       <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>
