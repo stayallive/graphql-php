@@ -22,6 +22,7 @@ use GraphQL\Type\Definition\Type;
 use GraphQL\Type\Definition\UnionType;
 use GraphQL\Type\Schema;
 use PHPUnit\Framework\TestCase;
+use RuntimeException;
 use stdClass;
 
 use function count;
@@ -1880,11 +1881,75 @@ class DefinitionTest extends TestCase
         $schema->assertValid();
     }
 
-    public function objectWithIsTypeOf(): ObjectType
+    // Lazy Fields
+
+    /**
+     * @see it('allows a type to define it\'s fields as closures to be lazy loaded')
+     */
+    public function testAllowsTypeWhichDefinesItFieldsAsClosure(): void
     {
-        return new ObjectType([
-            'name'   => 'ObjectWithIsTypeOf',
-            'fields' => ['f' => ['type' => Type::string()]],
+        $objType = new ObjectType([
+            'name'   => 'SomeObject',
+            'fields' => [
+                'f' => static function (): array {
+                    return ['type' => Type::string()];
+                },
+            ],
         ]);
+
+        $objType->assertValid();
+
+        self::assertSame(Type::string(), $objType->getField('f')->getType());
+    }
+
+    /**
+     * @see it('does not resolve field definitions if they are not accessed')
+     */
+    public function testFieldClosureNotExecutedIfNotAccessed(): void
+    {
+        $resolvedCount = 0;
+        $fieldCallback = static function () use (&$resolvedCount): array {
+            $resolvedCount++;
+
+            return ['type' => Type::string()];
+        };
+
+        $objType = new ObjectType([
+            'name'   => 'SomeObject',
+            'fields' => [
+                'f' => $fieldCallback,
+                'b' => static function (): void {
+                    throw new RuntimeException('Would not expect this to be called!');
+                },
+            ],
+        ]);
+
+        self::assertSame(Type::string(), $objType->getField('f')->getType());
+        self::assertSame(1, $resolvedCount);
+    }
+
+    /**
+     * @see it('does resolve all field definitions when validating the type')
+     */
+    public function testAllUnresolvedFieldsAreResolvedWhenValidatingType(): void
+    {
+        $resolvedCount = 0;
+        $fieldCallback = static function () use (&$resolvedCount): array {
+            $resolvedCount++;
+
+            return ['type' => Type::string()];
+        };
+
+        $objType = new ObjectType([
+            'name'   => 'SomeObject',
+            'fields' => [
+                'f' => $fieldCallback,
+                'o' => $fieldCallback,
+            ],
+        ]);
+        $objType->assertValid();
+
+        self::assertSame(Type::string(), $objType->getField('f')->getType());
+        self::assertSame(2, $resolvedCount);
     }
 }
